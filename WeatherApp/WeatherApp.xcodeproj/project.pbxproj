@@ -14,6 +14,9 @@
 		548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548CE065234D33E600B5177D /* ZipCodeHelper.swift */; };
 		548CE068234D340700B5177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548CE067234D340700B5177D /* Assets.xcassets */; };
 		C10B2D8823E71B4200D622F4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B2D8723E71B4200D622F4 /* MainView.swift */; };
+		C10B2D8B23E7358B00D622F4 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B2D8A23E7358B00D622F4 /* Secret.swift */; };
+		C12E098C23E75D9A008E09A1 /* darkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */; };
+		C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098D23E75F44008E09A1 /* WeatherModel.swift */; };
 		C1575C8923E4CED400825060 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8823E4CED400825060 /* NetworkHelper */; };
 		C1575C8C23E4CFA100825060 /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8B23E4CFA100825060 /* DataPersistence */; };
 		C1ABF50223E4D3480023517C /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1ABF50123E4D3480023517C /* WeatherAppTests.swift */; };
@@ -39,6 +42,9 @@
 		548CE065234D33E600B5177D /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		548CE067234D340700B5177D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C10B2D8723E71B4200D622F4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C10B2D8A23E7358B00D622F4 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = darkSkyAPI.swift; sourceTree = "<group>"; };
+		C12E098D23E75F44008E09A1 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C1ABF4FF23E4D3480023517C /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1ABF50123E4D3480023517C /* WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppTests.swift; sourceTree = "<group>"; };
 		C1ABF50323E4D3480023517C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 		548CE045234D33B500B5177D = {
 			isa = PBXGroup;
 			children = (
+				C10B2D8923E7357700D622F4 /* Secret */,
 				548CE050234D33B500B5177D /* WeatherApp */,
 				C1ABF50023E4D3480023517C /* WeatherAppTests */,
 				548CE04F234D33B500B5177D /* Products */,
@@ -87,14 +94,24 @@
 			children = (
 				548CE051234D33B500B5177D /* AppDelegate.swift */,
 				548CE053234D33B500B5177D /* SceneDelegate.swift */,
+				C12E098D23E75F44008E09A1 /* WeatherModel.swift */,
 				548CE065234D33E600B5177D /* ZipCodeHelper.swift */,
 				548CE055234D33B500B5177D /* ViewController.swift */,
+				C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */,
 				C10B2D8723E71B4200D622F4 /* MainView.swift */,
 				548CE05C234D33B600B5177D /* LaunchScreen.storyboard */,
 				548CE067234D340700B5177D /* Assets.xcassets */,
 				548CE05F234D33B600B5177D /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		C10B2D8923E7357700D622F4 /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				C10B2D8A23E7358B00D622F4 /* Secret.swift */,
+			);
+			path = Secret;
 			sourceTree = "<group>";
 		};
 		C1ABF50023E4D3480023517C /* WeatherAppTests */ = {
@@ -215,9 +232,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */,
+				C10B2D8B23E7358B00D622F4 /* Secret.swift in Sources */,
 				548CE056234D33B500B5177D /* ViewController.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
+				C12E098C23E75D9A008E09A1 /* darkSkyAPI.swift in Sources */,
 				C10B2D8823E71B4200D622F4 /* MainView.swift in Sources */,
+				C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
