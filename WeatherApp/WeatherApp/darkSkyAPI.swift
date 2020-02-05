@@ -10,7 +10,7 @@ import Foundation
 import NetworkHelper
 
 struct DarkSkyAPI {
-    static func darkSkyAPI(for lat: String, long: String, completion: @escaping (Result<[DarkSkyWeatherData],AppError>) -> ()) {
+    static func getWeatherData(lat: Double, long: Double, completion: @escaping (Result<[DarkSkyWeatherData],AppError>) -> ()) {
         let latLong = "\(lat),\(long)"
         let darkSkyEndpoint = "https://api.darksky.net/forecast/\(SecretKey.darkSkyKey)/\(latLong)"
         guard let url = URL(string: darkSkyEndpoint) else {
