@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     private var lat = Double()
     private var long = Double()
     private var locationName = String()
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         mainView.collection.dataSource = self
         mainView.textField.delegate = self
         mainView.collection.register(UINib(nibName: "WeatherCell", bundle: nil), forCellWithReuseIdentifier: "weatherCell")
+        
     }
     private func getLatLong(_ textField: String) {
         ZipCodeHelper.getLatLong(fromZipCode: textField) { (results) in
@@ -53,7 +55,8 @@ class ViewController: UIViewController {
            case .failure(let appError):
                print("Unable to load weather data: \(appError)")
            case .success(let weatherData):
-            self.localWeatherData = weatherData
+            self.localWeatherData = [weatherData]
+            dump(weatherData)
            }
        }
     }
@@ -62,6 +65,7 @@ extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         getLatLong(textField.text ?? "11377")
         textField.resignFirstResponder()
+        loadWeatherData()
         return true
     }
 }
@@ -80,7 +84,8 @@ extension ViewController: UICollectionViewDataSource {
             fatalError("Failed to dequeue collection view cell")
             
         }
-        dump(localWeatherData)
+        guard !localWeatherData!.isEmpty else { return cell }
+        cell.configureCell(localWeatherData!, indexPath: indexPath)
         return cell
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherCell: UICollectionViewCell {
     @IBOutlet weak var weatherImage: UIImageView!
-    func configureCell(_ weatherData: DarkSkyWeatherData) {
-        weatherImage.image = UIImage(named: "\(weatherData.daily.icon)")
+    func configureCell(_ weatherData: [DarkSkyWeatherData], indexPath: IndexPath) {
+        weatherImage.image = UIImage(named: "\(weatherData[indexPath.row].daily.icon)")
     }
 }
