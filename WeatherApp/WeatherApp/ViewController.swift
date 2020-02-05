@@ -84,8 +84,7 @@ extension ViewController: UICollectionViewDataSource {
             fatalError("Failed to dequeue collection view cell")
             
         }
-        guard !localWeatherData!.isEmpty else { return cell }
-        cell.configureCell(localWeatherData!, indexPath: indexPath)
+
         return cell
     }
     

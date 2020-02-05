@@ -11,6 +11,26 @@ import XCTest
 
 class WeatherAppTests: XCTestCase {
     
+    func testZipcodeToCoordinates() {
+      // arrange
+      let zipcode = "10023"
+      
+      let exp = XCTestExpectation(description: "zipcode parsed")
+      
+      // act
+      ZipCodeHelper.getLatLong(fromZipCode: zipcode) { (result) in
+        switch result {
+        case .failure(let fetchingError):
+          XCTFail("coordinates fetching error: \(fetchingError)")
+        case .success(let coordinate):
+          // assert
+          XCTAssertEqual(coordinate.lat, 40.7754123)
+          exp.fulfill()
+        }
+      }
+      
+      wait(for: [exp], timeout: 3.0)
+    }
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
