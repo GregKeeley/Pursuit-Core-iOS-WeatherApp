@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var localWeatherData: [DarkSkyWeatherData]? {
+    private var localWeatherData: Daily? {
         didSet {
             DispatchQueue.main.async {
                 self.mainView.collection.reloadData()
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     private var locationName = String()
     
     private let mainView = MainView()
+    
     override func loadView() {
         view = mainView
     }
@@ -35,7 +36,6 @@ class ViewController: UIViewController {
         mainView.collection.dataSource = self
         mainView.textField.delegate = self
         mainView.collection.register(UINib(nibName: "WeatherCell", bundle: nil), forCellWithReuseIdentifier: "weatherCell")
-        
     }
     private func getLatLong(_ textField: String) {
         ZipCodeHelper.getLatLong(fromZipCode: textField) { (results) in
@@ -55,11 +55,12 @@ class ViewController: UIViewController {
            case .failure(let appError):
                print("Unable to load weather data: \(appError)")
            case .success(let weatherData):
-            self.localWeatherData = [weatherData]
+            self.localWeatherData = weatherData
             dump(weatherData)
            }
        }
     }
+    
 }
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -74,17 +75,19 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 150, height: 150)
     }
 }
+
+
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return localWeatherData?.data.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         guard let cell = mainView.collection.dequeueReusableCell(withReuseIdentifier: "weatherCell", for: indexPath) as? WeatherCell else {
             fatalError("Failed to dequeue collection view cell")
-            
         }
-
+        cell.configureCell((localWeatherData?.data[indexPath.row])!)
         return cell
     }
     

@@ -21,6 +21,7 @@ class MainView: UIView {
         cv.layer.cornerRadius = 8
         return cv
     }()
+    
     public lazy var textField: UITextField = {
         let textField = UITextField()
         textField.layer.cornerRadius = 4

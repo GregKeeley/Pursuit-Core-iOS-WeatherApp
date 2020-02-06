@@ -17,6 +17,8 @@
 		C10B2D8B23E7358B00D622F4 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B2D8A23E7358B00D622F4 /* Secret.swift */; };
 		C12E098C23E75D9A008E09A1 /* darkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */; };
 		C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098D23E75F44008E09A1 /* WeatherModel.swift */; };
+		C12F95EC23EB2EEB000D58B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */; };
+		C12F95EE23EB2F03000D58B9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95ED23EB2F03000D58B9 /* DetailView.swift */; };
 		C1575C8923E4CED400825060 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8823E4CED400825060 /* NetworkHelper */; };
 		C1575C8C23E4CFA100825060 /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8B23E4CFA100825060 /* DataPersistence */; };
 		C178D62E23EB16F800941183 /* PixaBayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178D62D23EB16F800941183 /* PixaBayAPI.swift */; };
@@ -49,6 +51,8 @@
 		C10B2D8A23E7358B00D622F4 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = darkSkyAPI.swift; sourceTree = "<group>"; };
 		C12E098D23E75F44008E09A1 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C12F95ED23EB2F03000D58B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		C178D62D23EB16F800941183 /* PixaBayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayAPI.swift; sourceTree = "<group>"; };
 		C178D62F23EB171A00941183 /* PixaBayImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayImageModel.swift; sourceTree = "<group>"; };
 		C178D63123EB1D5F00941183 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
@@ -100,17 +104,12 @@
 		548CE050234D33B500B5177D /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				548CE051234D33B500B5177D /* AppDelegate.swift */,
-				548CE053234D33B500B5177D /* SceneDelegate.swift */,
-				C12E098D23E75F44008E09A1 /* WeatherModel.swift */,
-				548CE065234D33E600B5177D /* ZipCodeHelper.swift */,
-				C178D62D23EB16F800941183 /* PixaBayAPI.swift */,
-				C178D62F23EB171A00941183 /* PixaBayImageModel.swift */,
-				C178D63123EB1D5F00941183 /* WeatherCell.xib */,
-				C178D63323EB1DC500941183 /* WeatherCell.swift */,
-				548CE055234D33B500B5177D /* ViewController.swift */,
-				C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */,
-				C10B2D8723E71B4200D622F4 /* MainView.swift */,
+				C12F95EA23EB2EBF000D58B9 /* Views */,
+				C12F95E923EB2EB5000D58B9 /* Controllers */,
+				C12F95E823EB2E9F000D58B9 /* WeatherCell */,
+				C12F95E723EB2E07000D58B9 /* Models */,
+				C12F95E623EB2DD8000D58B9 /* APIs + Helper */,
+				C12F95E523EB2DC9000D58B9 /* Supporting Files */,
 				548CE05C234D33B600B5177D /* LaunchScreen.storyboard */,
 				548CE067234D340700B5177D /* Assets.xcassets */,
 				548CE05F234D33B600B5177D /* Info.plist */,
@@ -124,6 +123,61 @@
 				C10B2D8A23E7358B00D622F4 /* Secret.swift */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		C12F95E523EB2DC9000D58B9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				548CE051234D33B500B5177D /* AppDelegate.swift */,
+				548CE053234D33B500B5177D /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C12F95E623EB2DD8000D58B9 /* APIs + Helper */ = {
+			isa = PBXGroup;
+			children = (
+				548CE065234D33E600B5177D /* ZipCodeHelper.swift */,
+				C178D62D23EB16F800941183 /* PixaBayAPI.swift */,
+				C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */,
+			);
+			path = "APIs + Helper";
+			sourceTree = "<group>";
+		};
+		C12F95E723EB2E07000D58B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C12E098D23E75F44008E09A1 /* WeatherModel.swift */,
+				C178D62F23EB171A00941183 /* PixaBayImageModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C12F95E823EB2E9F000D58B9 /* WeatherCell */ = {
+			isa = PBXGroup;
+			children = (
+				C178D63123EB1D5F00941183 /* WeatherCell.xib */,
+				C178D63323EB1DC500941183 /* WeatherCell.swift */,
+			);
+			path = WeatherCell;
+			sourceTree = "<group>";
+		};
+		C12F95E923EB2EB5000D58B9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				548CE055234D33B500B5177D /* ViewController.swift */,
+				C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C12F95EA23EB2EBF000D58B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C10B2D8723E71B4200D622F4 /* MainView.swift */,
+				C12F95ED23EB2F03000D58B9 /* DetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C1ABF50023E4D3480023517C /* WeatherAppTests */ = {
@@ -247,9 +301,11 @@
 				548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */,
 				C10B2D8B23E7358B00D622F4 /* Secret.swift in Sources */,
 				548CE056234D33B500B5177D /* ViewController.swift in Sources */,
+				C12F95EC23EB2EEB000D58B9 /* DetailViewController.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				C12E098C23E75D9A008E09A1 /* darkSkyAPI.swift in Sources */,
 				C178D63423EB1DC500941183 /* WeatherCell.swift in Sources */,
+				C12F95EE23EB2F03000D58B9 /* DetailView.swift in Sources */,
 				C10B2D8823E71B4200D622F4 /* MainView.swift in Sources */,
 				C178D63023EB171A00941183 /* PixaBayImageModel.swift in Sources */,
 				C178D62E23EB16F800941183 /* PixaBayAPI.swift in Sources */,

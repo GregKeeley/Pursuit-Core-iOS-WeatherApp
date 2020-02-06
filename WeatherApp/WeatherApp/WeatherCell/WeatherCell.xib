@@ -23,14 +23,32 @@
                             <constraint firstAttribute="width" constant="126" id="mta-JA-VIQ"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no5-SO-NXj">
+                        <rect key="frame" x="16" y="8" width="36" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forecast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7S-Ac-ADb">
+                        <rect key="frame" x="16" y="169" width="67" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RiA-e8-TY5" firstAttribute="centerX" secondItem="smB-bi-G32" secondAttribute="centerX" id="27i-1z-va0"/>
+                    <constraint firstItem="no5-SO-NXj" firstAttribute="leading" secondItem="smB-bi-G32" secondAttribute="leading" constant="16" id="7hg-NL-ZR4"/>
+                    <constraint firstItem="no5-SO-NXj" firstAttribute="top" secondItem="smB-bi-G32" secondAttribute="top" constant="8" id="MYt-zz-qBZ"/>
+                    <constraint firstAttribute="bottom" secondItem="k7S-Ac-ADb" secondAttribute="bottom" constant="8" id="cWp-77-cP3"/>
                     <constraint firstItem="RiA-e8-TY5" firstAttribute="top" secondItem="smB-bi-G32" secondAttribute="top" constant="0.01" id="iEl-lJ-KZm"/>
+                    <constraint firstItem="k7S-Ac-ADb" firstAttribute="leading" secondItem="smB-bi-G32" secondAttribute="leading" constant="16" id="sdd-n1-Yyh"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="247" height="198"/>
             <connections>
+                <outlet property="dateLabel" destination="no5-SO-NXj" id="foL-qE-8Yd"/>
+                <outlet property="forecastLabel" destination="k7S-Ac-ADb" id="JkO-It-wb4"/>
                 <outlet property="weatherImage" destination="RiA-e8-TY5" id="D6S-WZ-nQU"/>
             </connections>
             <point key="canvasLocation" x="109.42028985507247" y="147.99107142857142"/>
