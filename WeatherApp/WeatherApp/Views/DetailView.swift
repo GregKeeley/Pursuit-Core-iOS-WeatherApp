@@ -54,8 +54,19 @@ class DetailView: UIView {
     private func commonInit() {
         constraintsCityImage()
         constraintsWeatherLabelStack()
+        constraintsDateLabel()
+        constraintsTempLowLabel()
+        constraintsTempHighLabel()
+        constraintsHumidityLabel()
+//        addLabelSubviews()
     }
-    
+//    private func addLabelSubviews() {
+//        weatherLabelStack.addSubview(tempLowLabel)
+//        weatherLabelStack.addSubview(tempHighLabel)
+//        weatherLabelStack.addSubview(dateLabel)
+//        weatherLabelStack.addSubview(humidityLabel)
+//
+//    }
     private func constraintsCityImage() {
         addSubview(cityImage)
         cityImage.translatesAutoresizingMaskIntoConstraints = false
@@ -70,10 +81,6 @@ class DetailView: UIView {
     }
     private func constraintsWeatherLabelStack() {
         addSubview(weatherLabelStack)
-        weatherLabelStack.addSubview(tempLowLabel)
-        weatherLabelStack.addSubview(tempHighLabel)
-        weatherLabelStack.addSubview(dateLabel)
-        weatherLabelStack.addSubview(humidityLabel)
         weatherLabelStack.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
         
@@ -81,6 +88,47 @@ class DetailView: UIView {
             weatherLabelStack.leadingAnchor.constraint(equalTo: leadingAnchor),
             weatherLabelStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             weatherLabelStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+        
+        ])
+    }
+    private func constraintsDateLabel() {
+        addSubview(dateLabel)
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            dateLabel.topAnchor.constraint(equalTo: cityImage.bottomAnchor, constant: 20),
+            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+        
+        ])
+    }
+    private func constraintsTempLowLabel() {
+        addSubview(tempLowLabel)
+        tempLowLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            tempLowLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 8),
+            tempLowLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+        
+        ])
+    }
+    private func constraintsTempHighLabel() {
+        addSubview(tempHighLabel)
+        tempHighLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            tempHighLabel.topAnchor.constraint(equalTo: tempLowLabel.bottomAnchor, constant: 8),
+            tempHighLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
+        
+        ])
+    }
+
+    private func constraintsHumidityLabel() {
+        addSubview(humidityLabel)
+        humidityLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            humidityLabel.topAnchor.constraint(equalTo: tempHighLabel.bottomAnchor, constant: 8),
+            humidityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
         
         ])
     }

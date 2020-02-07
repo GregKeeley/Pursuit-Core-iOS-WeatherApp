@@ -23,7 +23,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .gray
         loadLocationPhotoURL()
-        loadDetailView()
+        loadWeatherDetails()
     }
     
     private func loadLocationPhotoURL() {
@@ -41,34 +41,22 @@ class DetailViewController: UIViewController {
     private func loadPhoto() {
         DispatchQueue.main.async {
             self.detailView.cityImage.getImage(with: self.cityPicURL ?? "") { [ weak self ] (results) in
-            
-            switch results {
-            case .failure(let appError):
-                print("failed to load detail: \(appError) \(self?.cityPicURL)")
-            case .success(let image):
-                DispatchQueue.main.async {
-                    self?.detailView.cityImage.image = image
-                }
+                switch results {
+                case .failure(let appError):
+                    print("failed to load detail: \(appError)")
+                case .success(let image):
+                    DispatchQueue.main.async {
+                        self?.detailView.cityImage.image = image
+                    }
                 }
             }
         }
     }
-    private func loadDetailView() {
-        
+    private func loadWeatherDetails() {
+        dump(weatherData)
         detailView.tempLowLabel.text = weatherData?.temperatureLow.description
         detailView.tempHighLabel.text = weatherData?.temperatureHigh.description
         detailView.humidityLabel.text = weatherData?.humidity.description
-//        detailView.cityImage.getImage(with: cityPicURL ?? "") { (results) in
-//
-//            switch results {
-//            case .failure(let appError):
-//                print("failed to load detail: \(appError) \(self.cityPicURL)")
-//            case .success(let image):
-//                DispatchQueue.main.async {
-//                self.detailView.cityImage.image = image
-//                }
-//            }
-//        }
     }
     
 }
