@@ -20,7 +20,7 @@ class WeatherCell: UICollectionViewCell {
         
         let date = NSDate(timeIntervalSince1970: TimeInterval(weatherData.time))
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd"
+        dateFormatter.dateFormat = "dd.MM.yy"
         let formattedDate = dateFormatter.string(from: date as Date)
         dateLabel.text = String(formattedDate)
         

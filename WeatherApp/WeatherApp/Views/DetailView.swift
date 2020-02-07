@@ -42,7 +42,12 @@ class DetailView: UIView {
         label.text = "humidity"
         return label
     }()
-    
+    public lazy var favoriteButton: UIButton = {
+        let button = UIButton()
+        button.imageView?.image = UIImage(systemName: "heart")
+        button.tintColor = .red
+        return button
+    }()
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -53,11 +58,13 @@ class DetailView: UIView {
     }
     private func commonInit() {
         constraintsCityImage()
-        constraintsWeatherLabelStack()
+//        constraintsWeatherLabelStack()
+
         constraintsDateLabel()
         constraintsTempLowLabel()
         constraintsTempHighLabel()
         constraintsHumidityLabel()
+        constraintsFavoriteButton()
 //        addLabelSubviews()
     }
 //    private func addLabelSubviews() {
@@ -130,6 +137,20 @@ class DetailView: UIView {
             humidityLabel.topAnchor.constraint(equalTo: tempHighLabel.bottomAnchor, constant: 8),
             humidityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10)
         
+        ])
+    }
+    private func constraintsFavoriteButton() {
+        addSubview(favoriteButton)
+        favoriteButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            favoriteButton.topAnchor.constraint(equalTo: humidityLabel.bottomAnchor, constant: 20),
+            favoriteButton.leadingAnchor.constraint(equalTo: leadingAnchor)
+//            favoriteButton.topAnchor.constraint(equalTo: cityImage.bottomAnchor, constant: 20),
+//            favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+//            favoriteButton.widthAnchor.constraint(equalToConstant: 40),
+//            favoriteButton.heightAnchor.constraint(equalToConstant: 40)
+            
         ])
     }
 }

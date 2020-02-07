@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
             case .failure(let appError):
                 print("failed to load photo: \(appError)")
             case .success(let image):
-                let cityPic = image.hits.first
+                let cityPic = image.hits.randomElement()
                 self.cityPicURL = cityPic?.largeImageURL
                 self.loadPhoto()
             }
@@ -53,10 +53,15 @@ class DetailViewController: UIViewController {
         }
     }
     private func loadWeatherDetails() {
-        dump(weatherData)
-        detailView.tempLowLabel.text = weatherData?.temperatureLow.description
-        detailView.tempHighLabel.text = weatherData?.temperatureHigh.description
-        detailView.humidityLabel.text = weatherData?.humidity.description
+        let date = NSDate(timeIntervalSince1970: TimeInterval(weatherData!.time))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+        let formattedDate = dateFormatter.string(from: date as Date)
+        detailView.dateLabel.text = formattedDate
+        
+        detailView.tempLowLabel.text = ("Low: \(weatherData?.temperatureLow.description ?? "N/A")")
+        detailView.tempHighLabel.text = ("High: \(weatherData?.temperatureHigh.description ?? "N/A")")
+        detailView.humidityLabel.text = ("Humidity: \(weatherData?.humidity.description ?? "N/A")")
     }
     
 }
