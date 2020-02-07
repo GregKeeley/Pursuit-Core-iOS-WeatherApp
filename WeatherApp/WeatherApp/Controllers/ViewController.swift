@@ -98,6 +98,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
         detailVC.weatherData = localWeatherData?.data[indexPath.row]
+        detailVC.locationName = self.locationName
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -11,7 +11,8 @@ import NetworkHelper
 
 struct PixaBayAPI {
     static func getPhotos(searchQuery: String, completion: @escaping (Result<PixaBayImage, AppError>) -> ()) {
-        let pixaBayEndpoint = "https://pixabay.com/api/?key=\(SecretKey.pixaBayKey)&q=\(searchQuery.lowercased())"
+        let search = searchQuery.replacingOccurrences(of: " ", with: "")
+        let pixaBayEndpoint = "https://pixabay.com/api/?key=\(SecretKey.pixaBayKey)&q=\(search.lowercased())"
         print(pixaBayEndpoint)
         guard let url = URL(string: pixaBayEndpoint) else {
             completion(.failure(.badURL(pixaBayEndpoint)))

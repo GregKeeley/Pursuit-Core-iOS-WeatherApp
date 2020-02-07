@@ -15,6 +15,7 @@
 		548CE068234D340700B5177D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 548CE067234D340700B5177D /* Assets.xcassets */; };
 		C10B2D8823E71B4200D622F4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B2D8723E71B4200D622F4 /* MainView.swift */; };
 		C10B2D8B23E7358B00D622F4 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10B2D8A23E7358B00D622F4 /* Secret.swift */; };
+		C10C829A23ED085C00D7F75E /* ImageKit in Frameworks */ = {isa = PBXBuildFile; productRef = C10C829923ED085C00D7F75E /* ImageKit */; };
 		C12E098C23E75D9A008E09A1 /* darkSkyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098B23E75D9A008E09A1 /* darkSkyAPI.swift */; };
 		C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098D23E75F44008E09A1 /* WeatherModel.swift */; };
 		C12F95EC23EB2EEB000D58B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */; };
@@ -69,6 +70,7 @@
 			files = (
 				C1575C8C23E4CFA100825060 /* DataPersistence in Frameworks */,
 				C1575C8923E4CED400825060 /* NetworkHelper in Frameworks */,
+				C10C829A23ED085C00D7F75E /* ImageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +210,7 @@
 			packageProductDependencies = (
 				C1575C8823E4CED400825060 /* NetworkHelper */,
 				C1575C8B23E4CFA100825060 /* DataPersistence */,
+				C10C829923ED085C00D7F75E /* ImageKit */,
 			);
 			productName = WeatherApp;
 			productReference = 548CE04E234D33B500B5177D /* WeatherApp.app */;
@@ -262,6 +265,7 @@
 			packageReferences = (
 				C1575C8723E4CED400825060 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */,
 				C1575C8A23E4CFA100825060 /* XCRemoteSwiftPackageReference "DataPersistence" */,
+				C10C829823ED085C00D7F75E /* XCRemoteSwiftPackageReference "ImageKit" */,
 			);
 			productRefGroup = 548CE04F234D33B500B5177D /* Products */;
 			projectDirPath = "";
@@ -567,6 +571,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C10C829823ED085C00D7F75E /* XCRemoteSwiftPackageReference "ImageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/ImageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 		C1575C8723E4CED400825060 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexpaul/NetworkHelperSPM";
@@ -586,6 +598,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C10C829923ED085C00D7F75E /* ImageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C10C829823ED085C00D7F75E /* XCRemoteSwiftPackageReference "ImageKit" */;
+			productName = ImageKit;
+		};
 		C1575C8823E4CED400825060 /* NetworkHelper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C1575C8723E4CED400825060 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */;

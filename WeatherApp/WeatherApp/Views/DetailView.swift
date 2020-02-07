@@ -15,6 +15,34 @@ class DetailView: UIView {
         return image
     }()
     
+    public lazy var weatherLabelStack: UIStackView = {
+        let labelStack = UIStackView()
+        labelStack.axis = .horizontal
+        labelStack.alignment = .leading
+        return labelStack
+    }()
+    
+    public lazy var tempLowLabel: UILabel = {
+        let label = UILabel()
+        label.text = "low"
+        return label
+    }()
+    public lazy var tempHighLabel: UILabel = {
+        let label = UILabel()
+        label.text = "high"
+        return label
+    }()
+    public lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "date"
+        return label
+    }()
+    public lazy var humidityLabel: UILabel = {
+        let label = UILabel()
+        label.text = "humidity"
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -25,6 +53,7 @@ class DetailView: UIView {
     }
     private func commonInit() {
         constraintsCityImage()
+        constraintsWeatherLabelStack()
     }
     
     private func constraintsCityImage() {
@@ -36,6 +65,22 @@ class DetailView: UIView {
             cityImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             cityImage.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             cityImage.heightAnchor.constraint(equalTo: cityImage.widthAnchor)
+        
+        ])
+    }
+    private func constraintsWeatherLabelStack() {
+        addSubview(weatherLabelStack)
+        weatherLabelStack.addSubview(tempLowLabel)
+        weatherLabelStack.addSubview(tempHighLabel)
+        weatherLabelStack.addSubview(dateLabel)
+        weatherLabelStack.addSubview(humidityLabel)
+        weatherLabelStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+        
+            weatherLabelStack.topAnchor.constraint(equalTo: cityImage.bottomAnchor, constant: 20),
+            weatherLabelStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+            weatherLabelStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            weatherLabelStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         
         ])
     }
