@@ -9,11 +9,17 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    private let detailView = DetailView()
+    
+    override func loadView() {
+        view = detailView
+    }
+    public var weatherData: DailyDatum?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        view.backgroundColor = .gray
+       dump(weatherData)
     }
     
 
