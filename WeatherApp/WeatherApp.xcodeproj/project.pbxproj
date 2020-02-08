@@ -20,7 +20,10 @@
 		C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098D23E75F44008E09A1 /* WeatherModel.swift */; };
 		C12F95EC23EB2EEB000D58B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */; };
 		C12F95EE23EB2F03000D58B9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95ED23EB2F03000D58B9 /* DetailView.swift */; };
+		C1429E7A23EF52DA00D7F4B9 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1429E7923EF52DA00D7F4B9 /* FavoritesView.swift */; };
 		C145551323EF3A410041754A /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145551223EF3A410041754A /* ImageModel.swift */; };
+		C145551523EF3F460041754A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145551423EF3F460041754A /* TabBarController.swift */; };
+		C145551723EF45C40041754A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145551623EF45C40041754A /* FavoritesViewController.swift */; };
 		C1575C8923E4CED400825060 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8823E4CED400825060 /* NetworkHelper */; };
 		C1575C8C23E4CFA100825060 /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8B23E4CFA100825060 /* DataPersistence */; };
 		C178D62E23EB16F800941183 /* PixaBayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178D62D23EB16F800941183 /* PixaBayAPI.swift */; };
@@ -55,7 +58,10 @@
 		C12E098D23E75F44008E09A1 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C12F95ED23EB2F03000D58B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C1429E7923EF52DA00D7F4B9 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		C145551223EF3A410041754A /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		C145551423EF3F460041754A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C145551623EF45C40041754A /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		C178D62D23EB16F800941183 /* PixaBayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayAPI.swift; sourceTree = "<group>"; };
 		C178D62F23EB171A00941183 /* PixaBayImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayImageModel.swift; sourceTree = "<group>"; };
 		C178D63123EB1D5F00941183 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
@@ -171,7 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				548CE055234D33B500B5177D /* ViewController.swift */,
+				C145551423EF3F460041754A /* TabBarController.swift */,
 				C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */,
+				C145551623EF45C40041754A /* FavoritesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 			children = (
 				C10B2D8723E71B4200D622F4 /* MainView.swift */,
 				C12F95ED23EB2F03000D58B9 /* DetailView.swift */,
+				C1429E7923EF52DA00D7F4B9 /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,14 +317,17 @@
 				548CE066234D33E600B5177D /* ZipCodeHelper.swift in Sources */,
 				C10B2D8B23E7358B00D622F4 /* Secret.swift in Sources */,
 				548CE056234D33B500B5177D /* ViewController.swift in Sources */,
+				C145551523EF3F460041754A /* TabBarController.swift in Sources */,
 				C12F95EC23EB2EEB000D58B9 /* DetailViewController.swift in Sources */,
 				548CE052234D33B500B5177D /* AppDelegate.swift in Sources */,
 				C12E098C23E75D9A008E09A1 /* darkSkyAPI.swift in Sources */,
 				C178D63423EB1DC500941183 /* WeatherCell.swift in Sources */,
 				C12F95EE23EB2F03000D58B9 /* DetailView.swift in Sources */,
 				C10B2D8823E71B4200D622F4 /* MainView.swift in Sources */,
+				C145551723EF45C40041754A /* FavoritesViewController.swift in Sources */,
 				C178D63023EB171A00941183 /* PixaBayImageModel.swift in Sources */,
 				C178D62E23EB16F800941183 /* PixaBayAPI.swift in Sources */,
+				C1429E7A23EF52DA00D7F4B9 /* FavoritesView.swift in Sources */,
 				C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
 				C145551323EF3A410041754A /* ImageModel.swift in Sources */,
