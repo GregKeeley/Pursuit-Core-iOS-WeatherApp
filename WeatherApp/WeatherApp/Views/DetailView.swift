@@ -144,12 +144,10 @@ class DetailView: UIView {
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
         
-            favoriteButton.topAnchor.constraint(equalTo: humidityLabel.bottomAnchor, constant: 20),
-            favoriteButton.leadingAnchor.constraint(equalTo: leadingAnchor)
-//            favoriteButton.topAnchor.constraint(equalTo: cityImage.bottomAnchor, constant: 20),
-//            favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-//            favoriteButton.widthAnchor.constraint(equalToConstant: 40),
-//            favoriteButton.heightAnchor.constraint(equalToConstant: 40)
+            favoriteButton.topAnchor.constraint(equalTo: cityImage.bottomAnchor, constant: 20),
+            favoriteButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            favoriteButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.size.width * 0.20),
+            favoriteButton.heightAnchor.constraint(equalTo: widthAnchor)
             
         ])
     }

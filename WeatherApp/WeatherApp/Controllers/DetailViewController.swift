@@ -8,10 +8,15 @@
 
 import UIKit
 import ImageKit
+import DataPersistence
+import AVFoundation
 
 class DetailViewController: UIViewController {
     private let detailView = DetailView()
     
+    public var dataPersistence: DataPersistence<ImageObject>!
+    private var imageObjects = [ImageObject]()
+    private var cityImage: UIImage?
     override func loadView() {
         view = detailView
     }
@@ -24,8 +29,27 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .gray
         loadLocationPhotoURL()
         loadWeatherDetails()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action:#selector(saveFavoritePhoto))
     }
-    
+    @objc private func saveFavoritePhoto(_ sender: UIBarButtonItem) {
+        guard let image = cityImage else {
+            print("Image is nil")
+            return
+        }
+        let size = UIScreen.main.bounds.size
+        let rect = AVMakeRect(aspectRatio: image.size, insideRect: CGRect(origin: CGPoint.zero, size: size))
+        let resizedImage = image.resizeImage(to: rect.size.width, height: rect.size.height)
+        guard let resizedImageData = resizedImage.jpegData(compressionQuality: 1.0) else {
+            return
+        }
+        let imageObject = ImageObject(imageData: resizedImageData, date: Date())
+        do {
+            try dataPersistence.createItem(imageObject)
+            print("Image was saved")
+        } catch {
+            print("Error saving photo: \(error)")
+        }
+    }
     private func loadLocationPhotoURL() {
         PixaBayAPI.getPhotos(searchQuery: locationName ?? "https://pixabay.com/get/52e4d2444a53b108f5d08460962933771738dbe75a4c704c7d2e7bd0914bcd50_1280.jpg") { (results) in
             switch results {
@@ -47,6 +71,7 @@ class DetailViewController: UIViewController {
                 case .success(let image):
                     DispatchQueue.main.async {
                         self?.detailView.cityImage.image = image
+                        self?.cityImage = image
                     }
                 }
             }
@@ -64,4 +89,13 @@ class DetailViewController: UIViewController {
         detailView.humidityLabel.text = ("Humidity: \(weatherData?.humidity.description ?? "N/A")")
     }
     
+}
+extension UIImage {
+    func resizeImage(to width: CGFloat, height: CGFloat) -> UIImage {
+        let size = CGSize(width: width, height: height)
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { (context) in
+            self.draw(in: CGRect(origin: .zero, size: size))
+        }
+    }
 }

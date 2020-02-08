@@ -20,6 +20,7 @@
 		C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E098D23E75F44008E09A1 /* WeatherModel.swift */; };
 		C12F95EC23EB2EEB000D58B9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */; };
 		C12F95EE23EB2F03000D58B9 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12F95ED23EB2F03000D58B9 /* DetailView.swift */; };
+		C145551323EF3A410041754A /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C145551223EF3A410041754A /* ImageModel.swift */; };
 		C1575C8923E4CED400825060 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8823E4CED400825060 /* NetworkHelper */; };
 		C1575C8C23E4CFA100825060 /* DataPersistence in Frameworks */ = {isa = PBXBuildFile; productRef = C1575C8B23E4CFA100825060 /* DataPersistence */; };
 		C178D62E23EB16F800941183 /* PixaBayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C178D62D23EB16F800941183 /* PixaBayAPI.swift */; };
@@ -54,6 +55,7 @@
 		C12E098D23E75F44008E09A1 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		C12F95EB23EB2EEB000D58B9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C12F95ED23EB2F03000D58B9 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C145551223EF3A410041754A /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		C178D62D23EB16F800941183 /* PixaBayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayAPI.swift; sourceTree = "<group>"; };
 		C178D62F23EB171A00941183 /* PixaBayImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixaBayImageModel.swift; sourceTree = "<group>"; };
 		C178D63123EB1D5F00941183 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				C12E098D23E75F44008E09A1 /* WeatherModel.swift */,
 				C178D62F23EB171A00941183 /* PixaBayImageModel.swift */,
+				C145551223EF3A410041754A /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				C178D62E23EB16F800941183 /* PixaBayAPI.swift in Sources */,
 				C12E098E23E75F44008E09A1 /* WeatherModel.swift in Sources */,
 				548CE054234D33B500B5177D /* SceneDelegate.swift in Sources */,
+				C145551323EF3A410041754A /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
