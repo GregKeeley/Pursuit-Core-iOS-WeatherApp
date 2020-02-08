@@ -55,6 +55,7 @@ class DetailViewController: UIViewController {
             switch results {
             case .failure(let appError):
                 print("failed to load photo: \(appError)")
+                
             case .success(let image):
                 let cityPic = image.hits.randomElement()
                 self.cityPicURL = cityPic?.largeImageURL
@@ -68,6 +69,9 @@ class DetailViewController: UIViewController {
                 switch results {
                 case .failure(let appError):
                     print("failed to load detail: \(appError)")
+                    DispatchQueue.main.async {
+                        self?.detailView.cityImage.image = UIImage(systemName: "photo")
+                    }
                 case .success(let image):
                     DispatchQueue.main.async {
                         self?.detailView.cityImage.image = image

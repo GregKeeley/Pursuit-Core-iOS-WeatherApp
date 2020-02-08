@@ -10,7 +10,7 @@ import UIKit
 
 class FavoritesView: UIView {
 
-    private lazy var favoritesTableView: UITableView = {
+    public lazy var favoritesTableView: UITableView = {
         let tableView = UITableView()
         return tableView
     }()

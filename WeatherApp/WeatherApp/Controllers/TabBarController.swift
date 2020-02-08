@@ -15,6 +15,7 @@ class TabBarController: UITabBarController {
     
     private lazy var forecastVC: ViewController = {
         let viewController = ViewController()
+        viewController.dataPersistence = dataPersistence
         viewController.tabBarItem = UITabBarItem(title: "Forecast", image: UIImage(systemName: "cloud"), tag: 0)
         return viewController
     }()

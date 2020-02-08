@@ -20,12 +20,12 @@ class WeatherCell: UICollectionViewCell {
         
         let date = NSDate(timeIntervalSince1970: TimeInterval(weatherData.time))
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yy"
+        dateFormatter.dateFormat = "MM.dd.yy"
         let formattedDate = dateFormatter.string(from: date as Date)
         dateLabel.text = String(formattedDate)
         
         forecastLabel.text = weatherData.summary
-        humidityLabel.text = ("humidity: \(weatherData.humidity.description)%")
+        humidityLabel.text = ("humidity: \(weatherData.humidity * 100)%")
         tempRangeLabel.text = ("\(weatherData.temperatureLow) - \(weatherData.temperatureHigh)")
         
         DispatchQueue.main.async {

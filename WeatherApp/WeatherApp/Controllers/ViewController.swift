@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import DataPersistence
 
 class SectionHeader: UICollectionReusableView {
     @IBOutlet weak var sectionHeaderLabel: UILabel!
 }
 
 class ViewController: UIViewController {
-    
+    public var dataPersistence: DataPersistence<ImageObject>!
+
     private var localWeatherData: Daily? {
         didSet {
             DispatchQueue.main.async {
@@ -102,6 +104,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         let detailVC = DetailViewController()
         detailVC.weatherData = localWeatherData?.data[indexPath.row]
         detailVC.locationName = self.locationName
+        detailVC.dataPersistence = dataPersistence
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
