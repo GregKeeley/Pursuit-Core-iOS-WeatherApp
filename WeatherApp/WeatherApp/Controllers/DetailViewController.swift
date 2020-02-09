@@ -42,10 +42,10 @@ class DetailViewController: UIViewController {
         guard let resizedImageData = resizedImage.jpegData(compressionQuality: 1.0) else {
             return
         }
-        let imageObject = ImageObject(imageData: resizedImageData, date: Date())
+        let imageObject = ImageObject(imageData: resizedImageData, date: Date(), locationName: locationName ?? "N/A")
         do {
             try dataPersistence.createItem(imageObject)
-            print("Image was saved")
+            showAlert(title: "Favorite Saved", message: "photo has been saved to favorites")
         } catch {
             print("Error saving photo: \(error)")
         }

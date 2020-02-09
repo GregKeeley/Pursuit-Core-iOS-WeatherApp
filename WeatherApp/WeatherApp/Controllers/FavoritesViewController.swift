@@ -22,10 +22,12 @@ class FavoritesViewController: UIViewController {
         view = favoriteView
     }
     public var dataPersistence: DataPersistence<ImageObject>!
-
+    override func viewDidAppear(_ animated: Bool) {
+        loadFavoriteImages()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        view.backgroundColor = .gray
         favoriteView.favoritesTableView.delegate = self
         favoriteView.favoritesTableView.dataSource = self
         favoriteView.favoritesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "favoriteImageCell")
@@ -50,17 +52,22 @@ extension FavoritesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteImageCell", for: indexPath)
-        let data = favoriteImages[indexPath.row]
+       
+        let data = favoriteImages.reversed()[indexPath.row]
         guard let image = UIImage(data: data.imageData) else {
             print("Failed to get image")
             return cell
         }
+        cell.imageView?.contentMode = .scaleAspectFill
+        cell.imageView?.layer.cornerRadius = 8
         cell.imageView?.image = image
+        cell.textLabel?.text = data.locationName
         return cell
     }
     
-    
 }
 extension FavoritesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
